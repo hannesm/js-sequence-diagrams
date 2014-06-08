@@ -47,13 +47,15 @@
 		this.index = index;
 	};
 
-	Diagram.Signal = function(actorA, signaltype, actorB, message) {
+	Diagram.Signal = function(actorA, signaltype, actorB, message, ev1, ev2) {
 		this.type       = "Signal";
 		this.actorA     = actorA;
 		this.actorB     = actorB;
 		this.linetype   = signaltype & 3;
 		this.arrowtype  = (signaltype >> 2) & 3;
 		this.message    = message;
+                this.ev1        = ev1;
+                this.ev2        = ev2;
 	};
 
 	Diagram.Signal.prototype.isSelf = function() {

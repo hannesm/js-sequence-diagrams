@@ -476,7 +476,9 @@
 			var y = offsetY + SIGNAL_MARGIN + 2*SIGNAL_PADDING;
 
 			// Draw the text in the middle of the signal
-			this.draw_text(x, y, signal.message, this._font);
+			var bb = this.draw_text(x, y, signal.message, this._font);
+                        bb.mousedown(signal.ev1);
+                        bb.attr('title', signal.ev2);
 
 			// Draw the line along the bottom of the signal
 			y = offsetY + signal.height - SIGNAL_MARGIN - SIGNAL_PADDING;
@@ -541,6 +543,7 @@
 			r.attr({'fill': "#fff", 'stroke': 'none'});
 
 			t.toFront();
+                        return r;
 		},
 
 		draw_text_box : function (box, text, margin, padding, font) {
