@@ -62,11 +62,13 @@
 		return this.actorA.index == this.actorB.index;
 	};
 
-	Diagram.Note = function(actor, placement, message) {
+	Diagram.Note = function(actor, placement, message, ev1, ev2) {
 		this.type      = "Note";
 		this.actor     = actor;
 		this.placement = placement;
 		this.message   = message;
+                this.ev1       = ev1;
+                this.ev2       = ev2;
 
 		if (this.hasManyActors() && actor[0] == actor[1]) {
 			throw new Error("Note should be over two different actors");

@@ -519,7 +519,9 @@
 					throw new Error("Unhandled note placement:" + note.placement);
 			}
 
-			this.draw_text_box(note, note.message, NOTE_MARGIN, NOTE_PADDING, this._font);
+			var bb = this.draw_text_box(note, note.message, NOTE_MARGIN, NOTE_PADDING, this._font);
+                        bb.mousedown(note.ev1);
+                        bb.attr('title', note.ev2);
 		},
 
 		/**
@@ -560,7 +562,7 @@
 			x = getCenterX(box);
 			y = getCenterY(box);
 
-			this.draw_text(x, y, text, font);
+			return this.draw_text(x, y, text, font);
 		}
 
 		/**
