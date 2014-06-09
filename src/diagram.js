@@ -29,7 +29,7 @@
 			if (actors[i].alias == alias)
 				return actors[i];
 		}
-		i = actors.push( new Diagram.Actor(alias, name, actors.length) );
+		i = actors.push( new Diagram.Actor(alias, name, actors.length, false) );
 		return actors[ i - 1 ];
 	};
 
@@ -41,10 +41,11 @@
 		this.signals.push( signal );
 	};
 
-	Diagram.Actor = function(alias, name, index) {
+	Diagram.Actor = function(alias, name, index, sec) {
 		this.alias = alias;
 		this.name  = name;
 		this.index = index;
+                this.secure = sec;
 	};
 
 	Diagram.Signal = function(actorA, signaltype, actorB, message, ev1, ev2) {
