@@ -57,6 +57,7 @@
 		this.message    = message;
                 this.ev1        = ev1;
                 this.ev2        = ev2;
+                this.data       = [];
 	};
 
 	Diagram.Signal.prototype.isSelf = function() {
