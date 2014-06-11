@@ -598,7 +598,7 @@
 
 		init_font : function() {
 			this._font = {
-				'font-size': 16,
+				'font-size': 14,
 				'font-family': 'Andale Mono, monospace'
 			};
 		}
