@@ -553,7 +553,7 @@
 			r.attr({'fill': "#fff", 'stroke': 'none'});
 
 			t.toFront();
-                        return r;
+                        return t;
 		},
 
 		draw_text_box : function (box, text, margin, padding, font) {
