@@ -479,6 +479,7 @@
 			var bb = this.draw_text(x, y, signal.message, this._font);
                         if (signal.ev1 !== null) {
                             bb.mousedown(signal.ev1);
+                            bb.attr('cursor', 'pointer');
                         }
                         if (signal.ev2 !== null) {
                             bb.attr('title', signal.ev2);
@@ -523,13 +524,7 @@
 					throw new Error("Unhandled note placement:" + note.placement);
 			}
 
-			var bb = this.draw_text_box(note, note.message, NOTE_MARGIN, NOTE_PADDING, this._font);
-                        if (note.ev1 !== null) {
-                            bb.mousedown(note.ev1);
-                        }
-                        if (note.ev2 !== null) {
-                            bb.attr('title', note.ev2);
-                        }
+			this.draw_text_box(note, note.message, NOTE_MARGIN, NOTE_PADDING, this._font);
 		},
 
 		/**
