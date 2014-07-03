@@ -97,31 +97,6 @@
 		OVER    : 2
 	};
 
-	/** The following is included by jspp */
-	/*> ../build/grammar.js */
-
-	/**
-	 * jison doesn't have a good exception, so we make one
-	 */
-	function ParseError(message, hash) {
-		_.extend(this, hash);
-
-		this.name = "ParseError";
-		this.message = (message || "");
-	}
-	ParseError.prototype = new Error();
-	Diagram.ParseError = ParseError;
-
-	grammar.parseError = function(message, hash) {
-		throw new ParseError(message, hash);
-	};
-
-	Diagram.parse = function(input) {
-		grammar.yy = new Diagram();
-
-		return grammar.parse(input);
-	};
-
 	// Expose this class externally
 	this.Diagram = Diagram;
 
